@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prank Web App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+    <script>
+        function displayMessage() {
+            let userInput = document.getElementById("inputBox").value.trim(); // Get input value and trim spaces
+
+            if (userInput === "") {
+                return; // Do nothing if input is empty
+            }
+
+            let prankMessages = [
+                "Poi Velaya paar da dei😊😊"
+            ];
+
+            // Get a random prank message
+            let randomMessage = prankMessages[Math.floor(Math.random() * prankMessages.length)];
+
+            // Display the prank message
+            document.getElementById("output").innerHTML = randomMessage;
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter Something:</h1>
+    <input type="text" id="inputBox">
+    <button onclick="displayMessage()">Submit</button>
+    <p id="output"></p>
+</body>
+</html>
